@@ -1,0 +1,17 @@
+{
+  "name": "hunt-mcilroy-diff",
+  "version": "0.1.0",
+  "description": "Produces a line-level diff between two text documents by finding the longest common subsequence of lines.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {}
+}
