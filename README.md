@@ -31,3 +31,10 @@ Lines are compared by strict equality. No whitespace trimming, no case-folding, 
 - A trailing newline does not create a phantom empty final line. `"a\n"` and `"a"` are treated as one-line documents and diff to a single `equal`.
 - Blank lines in the middle of a document are real lines and are preserved.
 - When a line appears multiple times in both documents, the LCS backtracker anchors matches to the earliest available positions, which tends to keep the diff near the top. This is a deliberate choice, not configurable.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
